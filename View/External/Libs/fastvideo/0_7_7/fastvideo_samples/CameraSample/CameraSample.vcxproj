@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FB37657C-9DA6-4A0C-9755-F9D4A2F2D65E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CameraSample</RootNamespace>
+    <ProjectName>CameraSample</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 6.0.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>__STDC_CONSTANT_MACROS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\common;$(SolutionDir)\common\helper_image;$(SolutionDir)\common\options;$(SolutionDir)\fastvideo_sdk\inc;$(SolutionDir)\ffmpeg_wrapper\;$(SolutionDir)\ffmpeg_wrapper\Inc.Windows;$(SolutionDir)\libs\ffmpeg\inc\;$(SolutionDir)\libs\OpenGL\inc\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>fastvideo_sdk.lib;avcodec.lib;avformat.lib;avutil.lib;freeglut.lib;glew32.lib;cudart.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\fastvideo_sdk\lib\$(Platform);$(SolutionDir)\libs\ffmpeg\lib\win\$(Platform)\;$(SolutionDir)\libs\OpenGL\lib\win\$(Platform)\;$(CUDA_PATH)\lib\$(Platform)</AdditionalLibraryDirectories>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>copy $(SolutionDir)\fastvideo_sdk\bin\$(Platform)\fastvideo_sdk.dll $(OutDir)\fastvideo_sdk.dll
+copy $(SolutionDir)\libs\ffmpeg\lib\win\$(Platform)\avcodec-55.dll $(OutDir)\avcodec-55.dll
+copy $(SolutionDir)\libs\ffmpeg\lib\win\$(Platform)\avutil-52.dll $(OutDir)\avutil-52.dll
+copy $(SolutionDir)\libs\ffmpeg\lib\win\$(Platform)\avformat-55.dll $(OutDir)\avformat-55.dll
+copy $(SolutionDir)\libs\OpenGL\lib\win\$(Platform)\freeglut.dll $(OutDir)\freeglut.dll
+copy $(SolutionDir)\libs\OpenGL\lib\win\$(Platform)\glew32.dll $(OutDir)\glew32.dll
+copy $(SolutionDir)\libs\senselock\$(Platform)\sense4.dll $(OutDir)\sense4.dll</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>__STDC_CONSTANT_MACROS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\common;$(SolutionDir)\common\helper_image;$(SolutionDir)\common\options;$(SolutionDir)\fastvideo_sdk\inc;$(SolutionDir)\ffmpeg_wrapper\;$(SolutionDir)\ffmpeg_wrapper\Inc.Windows;$(SolutionDir)\libs\ffmpeg\inc\;$(SolutionDir)\libs\OpenGL\inc\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>fastvideo_sdk.lib;avcodec.lib;avformat.lib;avutil.lib;freeglut.lib;glew64.lib;cudart.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\fastvideo_sdk\lib\$(Platform);$(SolutionDir)\libs\ffmpeg\lib\win\$(Platform)\;$(SolutionDir)\libs\OpenGL\lib\win\$(Platform)\;$(CUDA_PATH)\lib\$(Platform)</AdditionalLibraryDirectories>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>copy $(SolutionDir)\fastvideo_sdk\bin\$(Platform)\fastvideo_sdk.dll $(OutDir)\fastvideo_sdk.dll
+copy $(SolutionDir)\libs\ffmpeg\lib\win\$(Platform)\avcodec-55.dll $(OutDir)\avcodec-55.dll
+copy $(SolutionDir)\libs\ffmpeg\lib\win\$(Platform)\avutil-52.dll $(OutDir)\avutil-52.dll
+copy $(SolutionDir)\libs\ffmpeg\lib\win\$(Platform)\avformat-55.dll $(OutDir)\avformat-55.dll
+copy $(SolutionDir)\libs\OpenGL\lib\win\$(Platform)\freeglut.dll $(OutDir)\freeglut.dll
+copy $(SolutionDir)\libs\OpenGL\lib\win\$(Platform)\glew64.dll $(OutDir)\glew64.dll
+copy $(SolutionDir)\libs\senselock\$(Platform)\sense4.dll $(OutDir)\sense4.dll</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>__STDC_CONSTANT_MACROS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\common;$(SolutionDir)\common\helper_image;$(SolutionDir)\common\options;$(SolutionDir)\fastvideo_sdk\inc;$(SolutionDir)\ffmpeg_wrapper\;$(SolutionDir)\ffmpeg_wrapper\Inc.Windows;$(SolutionDir)\libs\ffmpeg\inc\;$(SolutionDir)\libs\OpenGL\inc\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)\fastvideo_sdk\lib\$(Platform);$(SolutionDir)\libs\ffmpeg\lib\win\$(Platform)\;$(SolutionDir)\libs\OpenGL\lib\win\$(Platform)\;$(CUDA_PATH)\lib\$(Platform)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>fastvideo_sdk.lib;avcodec.lib;avformat.lib;avutil.lib;freeglut.lib;glew32.lib;cudart.lib</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(SolutionDir)\fastvideo_sdk\bin\$(Platform)\fastvideo_sdk.dll $(OutDir)\fastvideo_sdk.dll
+copy $(SolutionDir)\libs\ffmpeg\lib\win\$(Platform)\avcodec-55.dll $(OutDir)\avcodec-55.dll
+copy $(SolutionDir)\libs\ffmpeg\lib\win\$(Platform)\avutil-52.dll $(OutDir)\avutil-52.dll
+copy $(SolutionDir)\libs\ffmpeg\lib\win\$(Platform)\avformat-55.dll $(OutDir)\avformat-55.dll
+copy $(SolutionDir)\libs\OpenGL\lib\win\$(Platform)\freeglut.dll $(OutDir)\freeglut.dll
+copy $(SolutionDir)\libs\OpenGL\lib\win\$(Platform)\glew32.dll $(OutDir)\glew32.dll
+copy $(SolutionDir)\libs\senselock\$(Platform)\sense4.dll $(OutDir)\sense4.dll</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>__STDC_CONSTANT_MACROS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\common;$(SolutionDir)\common\helper_image;$(SolutionDir)\common\options;$(SolutionDir)\fastvideo_sdk\inc;$(SolutionDir)\ffmpeg_wrapper\;$(SolutionDir)\ffmpeg_wrapper\Inc.Windows;$(SolutionDir)\libs\ffmpeg\inc\;$(SolutionDir)\libs\OpenGL\inc\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)\fastvideo_sdk\lib\$(Platform);$(SolutionDir)\libs\ffmpeg\lib\win\$(Platform)\;$(SolutionDir)\libs\OpenGL\lib\win\$(Platform)\;$(CUDA_PATH)\lib\$(Platform)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>fastvideo_sdk.lib;avcodec.lib;avformat.lib;avutil.lib;freeglut.lib;glew64.lib;cudart.lib</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(SolutionDir)\fastvideo_sdk\bin\$(Platform)\fastvideo_sdk.dll $(OutDir)\fastvideo_sdk.dll
+copy $(SolutionDir)\libs\ffmpeg\lib\win\$(Platform)\avcodec-55.dll $(OutDir)\avcodec-55.dll
+copy $(SolutionDir)\libs\ffmpeg\lib\win\$(Platform)\avutil-52.dll $(OutDir)\avutil-52.dll
+copy $(SolutionDir)\libs\ffmpeg\lib\win\$(Platform)\avformat-55.dll $(OutDir)\avformat-55.dll
+copy $(SolutionDir)\libs\OpenGL\lib\win\$(Platform)\freeglut.dll $(OutDir)\freeglut.dll
+copy $(SolutionDir)\libs\OpenGL\lib\win\$(Platform)\glew64.dll $(OutDir)\glew64.dll
+copy $(SolutionDir)\libs\senselock\$(Platform)\sense4.dll $(OutDir)\sense4.dll</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\common\FilesParameterChecker.cpp" />
+    <ClCompile Include="..\..\common\helper_image\bmp.cpp" />
+    <ClCompile Include="..\..\common\helper_image\supported_files.cpp" />
+    <ClCompile Include="..\..\common\options\BaseOptions.cpp" />
+    <ClCompile Include="..\..\common\options\DebayerJpegOptions.cpp" />
+    <ClCompile Include="..\..\common\options\DebayerOptions.cpp" />
+    <ClCompile Include="..\..\common\options\EncoderOptions.cpp" />
+    <ClCompile Include="..\..\common\options\FfmpegOptions.cpp" />
+    <ClCompile Include="..\..\common\options\GrayscaleCorrectionOptions.cpp" />
+    <ClCompile Include="..\..\common\options\ParametersParser.cpp" />
+    <ClCompile Include="..\..\common\timing.cpp" />
+    <ClCompile Include="..\..\ffmpeg_wrapper\BaseFfmpeg.cpp" />
+    <ClCompile Include="..\..\ffmpeg_wrapper\ReaderFfmpeg.cpp" />
+    <ClCompile Include="..\..\ffmpeg_wrapper\WriterFfmpeg.cpp" />
+    <ClCompile Include="DebayerFfmpeg.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\common\FastAllocator.h" />
+    <ClInclude Include="..\..\common\FilesParameterChecker.hpp" />
+    <ClInclude Include="..\..\common\helper_image\bmp.hpp" />
+    <ClInclude Include="..\..\common\helper_image\helper_common.h" />
+    <ClInclude Include="..\..\common\helper_image\helper_lut.h" />
+    <ClInclude Include="..\..\common\helper_image\helper_pfm.h" />
+    <ClInclude Include="..\..\common\helper_image\helper_pgm.h" />
+    <ClInclude Include="..\..\common\helper_image\helper_raw.h" />
+    <ClInclude Include="..\..\common\helper_image\supported_files.hpp" />
+    <ClInclude Include="..\..\common\Image.h" />
+    <ClInclude Include="..\..\common\memory_interface.h" />
+    <ClInclude Include="..\..\common\options\BaseOptions.h" />
+    <ClInclude Include="..\..\common\options\DebayerJpegOptions.h" />
+    <ClInclude Include="..\..\common\options\DebayerOptions.h" />
+    <ClInclude Include="..\..\common\options\EncoderOptions.h" />
+    <ClInclude Include="..\..\common\options\FfmpegOptions.h" />
+    <ClInclude Include="..\..\common\options\GrayscaleCorrectionOptions.h" />
+    <ClInclude Include="..\..\common\options\ParametersParser.h" />
+    <ClInclude Include="..\..\common\timing.hpp" />
+    <ClInclude Include="..\..\ffmpeg_wrapper\BaseFfmpeg.hpp" />
+    <ClInclude Include="..\..\ffmpeg_wrapper\Inc.Windows\inttypes.h" />
+    <ClInclude Include="..\..\ffmpeg_wrapper\Inc.Windows\stdint.h" />
+    <ClInclude Include="..\..\ffmpeg_wrapper\ReaderFfmpeg.hpp" />
+    <ClInclude Include="..\..\ffmpeg_wrapper\WriterFfmpeg.hpp" />
+    <ClInclude Include="DebayerFfmpeg.hpp" />
+    <ClInclude Include="messages.h" />
+    <ClInclude Include="RunCamera.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 6.0.targets" />
+  </ImportGroup>
+</Project>

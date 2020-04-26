@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Debayer.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\..\common\options\BaseOptions.cpp">
+      <Filter>Options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\options\DebayerOptions.cpp">
+      <Filter>Options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\options\GrayscaleCorrectionOptions.cpp">
+      <Filter>Options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\options\ParametersParser.cpp">
+      <Filter>Options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\timing.cpp">
+      <Filter>Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\FilesParameterChecker.cpp" />
+    <ClCompile Include="..\..\common\helper_image\bmp.cpp">
+      <Filter>Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\helper_image\supported_files.cpp">
+      <Filter>Helpers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\common\Image.h" />
+    <ClInclude Include="..\..\fastvideo_sdk\inc\fastvideo_sdk.h" />
+    <ClInclude Include="Debayer.h" />
+    <ClInclude Include="messages.h" />
+    <ClInclude Include="..\..\common\options\BaseOptions.h">
+      <Filter>Options</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\options\DebayerOptions.h">
+      <Filter>Options</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\options\GrayscaleCorrectionOptions.h">
+      <Filter>Options</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\options\ParametersParser.h">
+      <Filter>Options</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\memory_interface.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\timing.hpp">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\FastAllocator.h" />
+    <ClInclude Include="..\..\common\FilesParameterChecker.hpp" />
+    <ClInclude Include="..\..\common\helper_image\bmp.hpp">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\helper_image\helper_common.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\helper_image\helper_lut.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\helper_image\helper_pfm.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\helper_image\helper_pgm.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\helper_image\helper_raw.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\helper_image\supported_files.hpp">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="RunDebayer.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Helpers">
+      <UniqueIdentifier>{84bbe18a-7207-434d-8b02-bf0db5a62c68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Options">
+      <UniqueIdentifier>{2c1a3a42-d901-4648-ad61-a3c80c0a3e14}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

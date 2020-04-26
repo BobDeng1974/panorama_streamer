@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="DebayerFfmpeg.cpp" />
+    <ClCompile Include="..\..\ffmpeg_wrapper\BaseFfmpeg.cpp">
+      <Filter>ffmpeg_wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\options\BaseOptions.cpp">
+      <Filter>Options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\options\DebayerJpegOptions.cpp">
+      <Filter>Options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\options\DebayerOptions.cpp">
+      <Filter>Options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\options\EncoderOptions.cpp">
+      <Filter>Options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\FilesParameterChecker.cpp">
+      <Filter>Options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\options\GrayscaleCorrectionOptions.cpp">
+      <Filter>Options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ffmpeg_wrapper\WriterFfmpeg.cpp">
+      <Filter>ffmpeg_wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ffmpeg_wrapper\ReaderFfmpeg.cpp">
+      <Filter>ffmpeg_wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\options\ParametersParser.cpp">
+      <Filter>Options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\timing.cpp">
+      <Filter>helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\options\FfmpegOptions.cpp">
+      <Filter>Options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\helper_image\bmp.cpp">
+      <Filter>helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\helper_image\supported_files.cpp">
+      <Filter>helpers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="messages.h" />
+    <ClInclude Include="DebayerFfmpeg.hpp" />
+    <ClInclude Include="..\..\common\FastAllocator.h" />
+    <ClInclude Include="..\..\common\Image.h" />
+    <ClInclude Include="..\..\ffmpeg_wrapper\BaseFfmpeg.hpp">
+      <Filter>ffmpeg_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\options\BaseOptions.h">
+      <Filter>Options</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\options\DebayerJpegOptions.h">
+      <Filter>Options</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\options\DebayerOptions.h">
+      <Filter>Options</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\options\EncoderOptions.h">
+      <Filter>Options</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\FilesParameterChecker.hpp">
+      <Filter>Options</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\options\GrayscaleCorrectionOptions.h">
+      <Filter>Options</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg_wrapper\WriterFfmpeg.hpp">
+      <Filter>ffmpeg_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg_wrapper\ReaderFfmpeg.hpp">
+      <Filter>ffmpeg_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\options\ParametersParser.h">
+      <Filter>Options</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\memory_interface.h">
+      <Filter>helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\timing.hpp">
+      <Filter>helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg_wrapper\Inc.Windows\inttypes.h">
+      <Filter>ffmpeg_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg_wrapper\Inc.Windows\stdint.h">
+      <Filter>ffmpeg_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\options\FfmpegOptions.h">
+      <Filter>Options</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\helper_image\bmp.hpp">
+      <Filter>helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\helper_image\helper_common.h">
+      <Filter>helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\helper_image\helper_lut.h">
+      <Filter>helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\helper_image\helper_pfm.h">
+      <Filter>helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\helper_image\helper_pgm.h">
+      <Filter>helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\helper_image\helper_raw.h">
+      <Filter>helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\helper_image\supported_files.hpp">
+      <Filter>helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="RunCamera.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Options">
+      <UniqueIdentifier>{31c230e0-b841-4055-a43c-b07a03ac2416}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{684757f1-8480-44d5-9e7a-f2cea488f0ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ffmpeg_wrapper">
+      <UniqueIdentifier>{2724ad33-4ee6-4da5-93b9-4a4f8ebe9456}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="helpers">
+      <UniqueIdentifier>{d8936eb8-62ff-4648-b16c-12ba73255023}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
